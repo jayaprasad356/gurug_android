@@ -248,7 +248,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp">
 
-                <wrteam.multivendor.shop.ui.Pinview
+                <com.graymatterworks.gurug.ui.Pinview
                     android:id="@+id/pinViewOTP"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"

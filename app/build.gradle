@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 30
     defaultConfig {
-        applicationId "wrteam.multivendor.shop"
+        applicationId "com.graymatterworks.gurug"
         minSdkVersion 27
         targetSdkVersion 30
         versionCode 1
@@ -114,3 +115,4 @@ dependencies {
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
 }
+
