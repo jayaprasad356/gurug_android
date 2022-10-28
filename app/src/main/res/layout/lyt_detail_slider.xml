@@ -8,6 +8,8 @@
         android:id="@+id/imgSlider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/violet"
+        android:padding="@dimen/_10sdp"
         android:contentDescription="@string/app_name" />
 </androidx.cardview.widget.CardView>
 

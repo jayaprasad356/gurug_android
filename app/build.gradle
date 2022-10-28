@@ -6,7 +6,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdk 30
     defaultConfig {
-        applicationId "com.graymatterworks.gurug"
+        applicationId "com.gmworks.gurug"
         minSdkVersion 27
         targetSdkVersion 30
         versionCode 1

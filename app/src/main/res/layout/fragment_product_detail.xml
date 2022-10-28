@@ -780,11 +780,12 @@
     <Button
         android:id="@+id/btnCart"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/bg_gradient"
         android:text="@string/go_to_cart"
         android:textAllCaps="false"
+        android:layout_marginHorizontal="@dimen/_20sdp"
         android:textColor="@color/white"
         android:textSize="@dimen/_15sdp"
         android:textStyle="bold" />

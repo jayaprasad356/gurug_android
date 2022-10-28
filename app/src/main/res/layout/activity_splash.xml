@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     android:fitsSystemWindows="false">
 
     <ImageView
@@ -14,12 +13,10 @@
         android:contentDescription="@string/app_name" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
         android:layout_centerInParent="true"
         android:contentDescription="@string/app_name"
-        android:minWidth="@dimen/_220sdp"
-        android:minHeight="@dimen/_220sdp"
         android:src="@drawable/logo" />
 
 </RelativeLayout>
