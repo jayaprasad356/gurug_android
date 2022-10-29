@@ -506,4 +506,10 @@
     <string name="standard">standard shipping</string>
     <string name="local">local shipping.</string>
     <string name="please_select_address">Please select address!</string>
+    <string name="log_in">Login</string>
+    <string name="forgot_pass">Forgot Password?</string>
+    <string name="new_to_register">New to Logistics?<b> Register</b></string>
+    <string name="sign_up">Sign Up</string>
+
+
 </resources>

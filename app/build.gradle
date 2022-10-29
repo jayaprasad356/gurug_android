@@ -114,5 +114,6 @@ dependencies {
     implementation (name: 'sslmodule', ext:'aar')
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
 

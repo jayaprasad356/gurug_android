@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.gmworks.gurug.activity.SignInActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.json.JSONException;
@@ -113,7 +114,7 @@ public class DrawerFragment extends Fragment {
 
         lytProfile.setOnClickListener(v -> {
             if (!session.getBoolean(Constant.IS_USER_LOGIN)) {
-                startActivity(new Intent(activity, LoginActivity.class).putExtra(Constant.FROM, "drawer"));
+                startActivity(new Intent(activity, SignInActivity.class).putExtra(Constant.FROM, "drawer"));
             }
         });
 

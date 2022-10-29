@@ -337,6 +337,8 @@ public class Constant {
     public static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghjiklmnopqrstuvwxyz";
     public static final String NUMERIC_STRING = "123456789";
     public static String TOOLBAR_TITLE;
+    public static final String OTP = "otp";
+
 
     //**************Constants Values***************
     public static String DefaultAddress = "";
