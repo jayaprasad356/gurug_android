@@ -58,7 +58,6 @@ public class OtpActivity extends AppCompatActivity {
         activity = OtpActivity.this;
         session = new Session(activity);
         otpFor = "new_user";
-
         generateOTP(mobile);
 
         verifyButton.setOnClickListener(new View.OnClickListener() {
