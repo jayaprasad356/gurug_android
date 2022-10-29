@@ -522,6 +522,7 @@ public class ApiConfig extends Application {
                 params.put(Constant.PRODUCT_VARIANT_ID, ids);
                 params.put(Constant.QTY, qty);
                 ApiConfig.RequestToVolley((result, response) -> {
+                    Log.d("CART_RES",response);
                     if (result) {
                         getCartItemCount(activity, session);
                     }

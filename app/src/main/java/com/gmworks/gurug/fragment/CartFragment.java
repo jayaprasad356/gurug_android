@@ -12,6 +12,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -466,6 +467,7 @@ public class CartFragment extends Fragment {
 
         ApiConfig.RequestToVolley((result, response) -> {
             if (result) {
+                Log.d("CART_LIST_RES",response);
                 try {
                     jsonObject = new JSONObject(response);
                     if (!jsonObject.getBoolean(Constant.ERROR)) {

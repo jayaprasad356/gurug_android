@@ -209,7 +209,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_10sdp"
-            android:background="@drawable/confirm_bg"
+            android:background="@drawable/bg_gradient"
             android:gravity="center"
             android:padding="@dimen/_10sdp"
             android:text="@string/continue_"

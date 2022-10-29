@@ -56,11 +56,7 @@ public class SplashActivity extends Activity {
                         session.setData(Constant.SHIPPING_TYPE, jsonObject.getString(Constant.SHIPPING_TYPE));
 
                         if (data == null) {
-                            if (!session.getBoolean("is_first_time")) {
-                                startActivity(new Intent(SplashActivity.this, WelcomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                            } else {
-                                startActivity(new Intent(SplashActivity.this, MainActivity.class).putExtra(Constant.FROM, "").addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                            }
+                            startActivity(new Intent(SplashActivity.this, MainActivity.class).putExtra(Constant.FROM, "").addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                         } else if (data.isHierarchical()) {
                             switch (data.getPath().split("/")[data.getPath().split("/").length - 2]) {
                                 case "seller":

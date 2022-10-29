@@ -49,6 +49,8 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
+            android:padding="@dimen/_5sdp"
+            android:background="@color/violet"
             android:contentDescription="@string/app_name" />
 
         <TextView
