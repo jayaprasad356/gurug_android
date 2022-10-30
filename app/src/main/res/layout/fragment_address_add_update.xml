@@ -22,95 +22,138 @@
             android:layout_margin="10dp"
             android:orientation="vertical"
             android:paddingBottom="20dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"/>
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Name" />
 
                 <EditText
                     android:id="@+id/edtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/etbg"
                     android:hint="@string/name"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
-                    android:textColorHint="@color/white"
-                    android:textColor="@color/white"
                     android:padding="@dimen/_10sdp"
-                    android:background="@drawable/etbg"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
 
             </LinearLayout>
 
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Mobile" />
 
                 <EditText
                     android:id="@+id/edtMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:background="@drawable/etbg"
                     android:hint="@string/mobile"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:padding="@dimen/_10sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColorHint="@color/white" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Alternate Mobile No" />
 
                 <EditText
                     android:id="@+id/edtAlternateMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:background="@drawable/etbg"
                     android:hint="@string/alternate_mobile"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:padding="@dimen/_10sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColorHint="@color/white" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Address" />
 
                 <EditText
                     android:id="@+id/edtAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:background="@drawable/etbg"
                     android:hint="@string/address"
                     android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:padding="@dimen/_10sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColorHint="@color/white" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="Landmark" />
 
                 <EditText
                     android:id="@+id/edtLandmark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:hint="@string/landmark"
                     android:importantForAutofill="no"
                     android:inputType="text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@drawable/etbg"
+                    android:padding="@dimen/_10sdp"
+                    android:textColorHint="@color/white" />
+
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:id="@+id/lytLocalCityArea"
@@ -127,24 +170,33 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:scaleType="centerInside">
 
-                        <EditText
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="Select City" />
+
+
+
+
+                    <EditText
                             android:id="@+id/tvCity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
                             android:drawableEnd="@drawable/ic_down_arrow"
                             android:focusable="false"
                             android:hint="@string/select_city"
                             android:importantForAutofill="no"
                             android:inputType="text"
+                            android:textColorHint="@color/white"
+                            android:padding="@dimen/_10sdp"
+                            android:background="@drawable/etbg"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -154,24 +206,28 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:scaleType="centerInside">
 
-                        <EditText
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="Select Area" />
+
+
+                    <EditText
                             android:id="@+id/tvArea"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
                             android:drawableEnd="@drawable/ic_down_arrow"
                             android:focusable="false"
                             android:hint="@string/select_area"
                             android:importantForAutofill="no"
+                        android:textColorHint="@color/white"
+                        android:background="@drawable/etbg"
+                        android:padding="@dimen/_10sdp"
                             android:inputType="text"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                    </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -192,21 +248,28 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerInside">
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="City" />
 
-                        <EditText
+
+
+
+
+                    <EditText
                             android:id="@+id/edtCity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
                             android:hint="@string/city"
                             android:importantForAutofill="no"
                             android:inputType="text"
+                        android:textColorHint="@color/white"
+                        android:background="@drawable/etbg"
+                        android:padding="@dimen/_10sdp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                    </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -216,40 +279,48 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerInside">
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="Area" />
 
-                        <EditText
+
+                    <EditText
                             android:id="@+id/edtArea"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
                             android:hint="@string/area"
                             android:importantForAutofill="no"
                             android:inputType="text"
+                        android:textColorHint="@color/white"
+                        android:background="@drawable/etbg"
+                        android:padding="@dimen/_10sdp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                    </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside">
+                android:paddingBottom="@dimen/_4sdp"
+                android:text="Pincode" />
 
                 <EditText
                     android:id="@+id/edtPinCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:hint="@string/pincode"
                     android:importantForAutofill="no"
                     android:inputType="text"
+                    android:textColorHint="@color/white"
+                    android:background="@drawable/etbg"
+                    android:padding="@dimen/_10sdp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-            </com.google.android.material.textfield.TextInputLayout>
+
 
 
             <LinearLayout
@@ -257,41 +328,68 @@
                 android:layout_height="wrap_content"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/_10sdp"
+                >
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="State" />
+
+
+
 
                     <EditText
                         android:id="@+id/edtState"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
                         android:hint="@string/state"
                         android:importantForAutofill="no"
                         android:inputType="text"
+                        android:background="@drawable/etbg"
+                        android:padding="@dimen/_10sdp"
+                        android:textColorHint="@color/white"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:scaleType="centerInside">
+                    android:scaleType="centerInside"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="Country" />
 
                     <EditText
                         android:id="@+id/edtCountry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
                         android:hint="@string/country"
                         android:importantForAutofill="no"
                         android:inputType="text"
+                        android:background="@drawable/etbg"
+                        android:padding="@dimen/_10sdp"
+                        android:textColorHint="@color/white"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -338,8 +436,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
 
                 <TextView

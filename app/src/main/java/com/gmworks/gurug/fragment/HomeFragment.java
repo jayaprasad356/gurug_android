@@ -183,7 +183,7 @@ public class HomeFragment extends Fragment {
             } else {
                 MainActivity.fm.beginTransaction().show(MainActivity.categoryFragment).hide(MainActivity.active).commit();
             }
-            MainActivity.bottomNavigationView.setSelectedItemId(R.id.navCategory);
+           // MainActivity.bottomNavigationView.setSelectedItemId(R.id.navCategory);
             MainActivity.active = MainActivity.categoryFragment;
         });
 

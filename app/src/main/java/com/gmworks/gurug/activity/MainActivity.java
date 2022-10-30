@@ -26,8 +26,10 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.gmworks.gurug.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONException;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
     @SuppressLint("StaticFieldLeak")
     public static Toolbar toolbar;
-    public static BottomNavigationView bottomNavigationView;
+   // public static BottomNavigationView bottomNavigationView;
     public static Fragment active;
     public static FragmentManager fm = null;
     public static Fragment homeFragment, categoryFragment,cartFragment, favoriteFragment, drawerFragment;
@@ -75,6 +77,9 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
     TextView toolbarTitle;
     public static PinCodeFragment pinCodeFragment;
     ImageView imageMenu, imageHome;
+
+
+    ChipNavigationBar chipNavigationBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +98,8 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
         activity = MainActivity.this;
         session = new Session(activity);
         ApiConfig.getShippingType(activity,session);
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+//        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         from = getIntent().getStringExtra(Constant.FROM);
         databaseHelper = new DatabaseHelper(activity);
 
@@ -108,6 +114,21 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
         fm = getSupportFragmentManager();
 
+
+
+        fm = getSupportFragmentManager();
+
+
+
+        chipNavigationBar = findViewById(R.id.chipNavigationBar);
+        chipNavigationBar.setItemSelected(R.id.navWishList,
+                true);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container,
+                        new HomeFragment()).commit();
+
+        bottomMenu();
+
         homeFragment = new HomeFragment();
         categoryFragment = new CategoryFragment();
         cartFragment = new CartFragment();
@@ -116,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
 
         Bundle bundle = new Bundle();
-        bottomNavigationView.setSelectedItemId(R.id.navMain);
+      //bottomNavigationView.setSelectedItemId(R.id.navMain);
         active = homeFragment;
         homeClicked = true;
         drawerClicked = false;
@@ -143,89 +164,11 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
                         Color.parseColor(getResources().getString(R.color.colorSecondary))
                 });
 
-        bottomNavigationView.setItemIconTintList(iconColorStates);
-        bottomNavigationView.setItemTextColor(iconColorStates);
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            {
-                if (item.getItemId() == R.id.navMain) {
-                    if (active != homeFragment) {
-                        if (session.getBoolean(Constant.IS_USER_LOGIN)) {
-                            Constant.TOOLBAR_TITLE = getString(R.string.hi) + session.getData(Constant.NAME) + "!";
-                        } else {
-                            Constant.TOOLBAR_TITLE = getString(R.string.hi_user);
-                        }
-                        invalidateOptionsMenu();
-                        bottomNavigationView.getMenu().findItem(item.getItemId()).setChecked(true);
-                        if (!homeClicked) {
-                            fm.beginTransaction().add(R.id.container, homeFragment).show(homeFragment).hide(active).commit();
-                            homeClicked = true;
-                        } else {
-                            fm.beginTransaction().show(homeFragment).hide(active).commit();
-                        }
-                        active = homeFragment;
-                    }
-                } else if (item.getItemId() == R.id.navCategory) {
-                    Constant.TOOLBAR_TITLE = getString(R.string.title_category);
-                    invalidateOptionsMenu();
-                    if (active != categoryFragment) {
-                        bottomNavigationView.getMenu().findItem(item.getItemId()).setChecked(true);
-                        if (!categoryClicked) {
-                            fm.beginTransaction().add(R.id.container, categoryFragment).show(categoryFragment).hide(active).commit();
-                            categoryClicked = true;
-                        } else {
-                            fm.beginTransaction().show(categoryFragment).hide(active).commit();
-                        }
-                        active = categoryFragment;
-                    }
-                } else if (item.getItemId() == R.id.navCart) {
-                    Constant.TOOLBAR_TITLE = getString(R.string.title_cart);
-                    invalidateOptionsMenu();
-                    if (active != cartFragment) {
-                        bottomNavigationView.getMenu().findItem(item.getItemId()).setChecked(true);
-                        if (!cartClicked) {
-                            fm.beginTransaction().add(R.id.container, cartFragment).show(cartFragment).hide(active).commit();
-                            cartClicked = true;
-                        } else {
-                            fm.beginTransaction().show(cartFragment).hide(active).commit();
-                        }
-                        active = cartFragment;
-                    }
-                }
-                else if (item.getItemId() == R.id.navWishList) {
-                    Constant.TOOLBAR_TITLE = getString(R.string.title_fav);
-                    invalidateOptionsMenu();
-                    if (active != favoriteFragment) {
-                        bottomNavigationView.getMenu().findItem(item.getItemId()).setChecked(true);
-                        if (!favoriteClicked) {
-                            fm.beginTransaction().add(R.id.container, favoriteFragment).show(favoriteFragment).hide(active).commit();
-                            favoriteClicked = true;
-                        } else {
-                            fm.beginTransaction().show(favoriteFragment).hide(active).commit();
-                        }
-                        active = favoriteFragment;
-                    }
-                } else if (item.getItemId() == R.id.navProfile) {
-                    Constant.TOOLBAR_TITLE = getString(R.string.title_profile);
-                    invalidateOptionsMenu();
-                    if (active != drawerFragment) {
-                        bottomNavigationView.getMenu().findItem(item.getItemId()).setChecked(true);
-                        if (!drawerClicked) {
-                            fm.beginTransaction().add(R.id.container, drawerFragment).show(drawerFragment).hide(active).commit();
-                            drawerClicked = true;
-                        } else {
-                            fm.beginTransaction().show(drawerFragment).hide(active).commit();
-                        }
-                        active = drawerFragment;
-                    }
-                }
-            }
-            return false;
-        });
 
         switch (from) {
             case "checkout":
-                bottomNavigationView.setVisibility(View.GONE);
+                chipNavigationBar.setVisibility(View.GONE);
                 ApiConfig.getCartItemCount(activity, session);
                 Fragment fragment = new CartFragment();
                 bundle = new Bundle();
@@ -301,6 +244,43 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
         GetProductsName();
 
         getUserData(activity, session);
+
+    }
+
+    private void bottomMenu() {
+
+
+        chipNavigationBar.setOnItemSelectedListener
+                (new ChipNavigationBar.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(int i) {
+                        Fragment fragment = null;
+                        switch (i){
+                            case R.id.navWishList:
+                                fragment = new FavoriteFragment();
+                                break;
+                            case R.id.navCategory:
+                                fragment = new CategoryFragment();
+                                break;
+
+                            case R.id.navMain:
+                                fragment = new HomeFragment();
+                                break;
+
+                            case R.id.navCart:
+                                fragment = new CartFragment();
+                                break;
+
+                            case R.id.navProfile:
+                                fragment = new ProfileFragment();
+                                break;
+
+                        }
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container,
+                                        fragment).commit();
+                    }
+                });
 
     }
 
@@ -387,7 +367,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
         if (fm.getBackStackEntryCount() > 0) {
             toolbarTitle.setText(Constant.TOOLBAR_TITLE);
-            bottomNavigationView.setVisibility(View.GONE);
+            chipNavigationBar.setVisibility(View.GONE);
 
             cardViewHamburger.setCardBackgroundColor(getColor(R.color.colorPrimaryLight));
             imageMenu.setOnClickListener(v -> fm.popBackStack());
@@ -400,7 +380,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
             } else {
                 toolbarTitle.setText(getString(R.string.hi_user));
             }
-            bottomNavigationView.setVisibility(View.VISIBLE);
+            chipNavigationBar.setVisibility(View.VISIBLE);
             cardViewHamburger.setCardBackgroundColor(getColor(R.color.colorPrimaryLight));
             imageMenu.setVisibility(View.GONE);
             imageHome.setVisibility(View.VISIBLE);

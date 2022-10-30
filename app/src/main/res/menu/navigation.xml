@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
 
@@ -8,23 +9,44 @@
     <item
         android:id="@+id/navWishList"
         android:icon="@drawable/selector_favorite"
-        android:title="@string/title_fav" />
+        android:title="@string/title_fav"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/colorPrimary"
+
+        />
     <item
         android:id="@+id/navCategory"
         android:icon="@drawable/selector_category"
-        android:title="@string/title_category" />
+        android:title="@string/title_category"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/colorPrimary"
+        />
     <item
         android:id="@+id/navMain"
         android:icon="@drawable/selector_home"
-        android:title="@string/title_home" />
+        android:title="@string/title_home"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/colorPrimary"
+        />
     <item
         android:id="@+id/navCart"
         android:icon="@drawable/selector_cart"
-        android:title="@string/title_category" />
+        android:title="@string/title_category"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/colorPrimary"
+        />
 
     <item
         android:id="@+id/navProfile"
         android:icon="@drawable/selector_person"
-        android:title="@string/title_profile" />
+        android:title="@string/title_profile"
+        app:cnb_iconColor="@color/white"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/colorPrimary"
+        />
 
 </menu>
