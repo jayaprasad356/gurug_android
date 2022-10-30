@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_1sdp"
-    android:background="@drawable/card_shadow"
+    android:background="@drawable/address_card_bg"
     android:orientation="horizontal"
     android:padding="@dimen/_15sdp">
 
@@ -23,6 +23,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Deliver to :"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            />
+
+
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"

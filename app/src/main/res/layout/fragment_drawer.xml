@@ -92,21 +92,157 @@
 
         </LinearLayout>
 
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_grey" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
+
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/ic_black_share"/>
+
+                <TextView
+                    android:id="@+id/tvMenuShareApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/text_view_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/share_app"
+                    android:textSize="@dimen/_12sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableTint="@color/drawer_icon_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:background="@drawable/bg_menu_1"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/ic_rate"/>
+
+                <TextView
+                    android:id="@+id/tvMenuRateUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/text_view_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/rate"
+                    android:padding="@dimen/_3sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableTint="@color/drawer_icon_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:background="@drawable/bg_menu_1"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/ic_contact1"/>
+
+                <TextView
+                    android:id="@+id/tvMenuContactUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/text_view_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/contact"
+                    android:padding="@dimen/_3sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableTint="@color/drawer_icon_color" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:background="@drawable/card_shadow"
             android:backgroundTint="@color/white"
             android:orientation="vertical"
-            android:padding="@dimen/_5sdp">
+            android:padding="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/bg_greybackgroundcolor">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_black_home_outlined" />
+
+                </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvMenuHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:background="@drawable/text_view_ripple"
                 android:clickable="true"
@@ -114,73 +250,157 @@
                 android:focusable="true"
                 android:fontFamily="@font/open_sans"
                 android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_15sdp"
                 android:paddingBottom="@dimen/_7sdp"
                 android:text="@string/title_home"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_home_outlined"
                 app:drawableTint="@color/drawer_icon_color" />
 
-            <TextView
-                android:id="@+id/tvMenuCart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
-                android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
-                android:focusable="true"
-                android:fontFamily="@font/open_sans"
-                android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:paddingBottom="@dimen/_7sdp"
-                android:text="@string/title_cart"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_cart_outlined"
-                app:drawableTint="@color/drawer_icon_color" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvMenuNotification"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
-                android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
-                android:focusable="true"
-                android:fontFamily="@font/open_sans"
-                android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:paddingBottom="@dimen/_7sdp"
-                android:text="@string/notifications"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_notifications"
-                app:drawableTint="@color/drawer_icon_color" />
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/bg_greybackgroundcolor">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_black_cart_outlined" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvMenuCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/text_view_ripple"
+                    android:clickable="true"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:minHeight="48dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="@string/cart"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_right_arrow"
+                    app:drawableTint="@color/drawer_icon_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/bg_greybackgroundcolor">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_notifications" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvMenuNotification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/text_view_ripple"
+                    android:clickable="true"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:minHeight="48dp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:text="@string/notifications"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_right_arrow"
+                    app:drawableTint="@color/drawer_icon_color"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/lytMenuGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_shadow"
+                android:padding="@dimen/_10sdp"
                 android:orientation="vertical">
 
                 <View
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_menu_1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:background="@drawable/bg_greybackgroundcolor">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_menu_tracker" />
+
+                    </RelativeLayout>
 
                 <TextView
                     app:drawableEndCompat="@drawable/ic_right_arrow"
@@ -195,15 +415,41 @@
                     android:focusable="true"
                     android:fontFamily="@font/open_sans"
                     android:minHeight="48dp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:paddingEnd="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_7sdp"
                     android:text="@string/your_orders"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/ic_menu_tracker"
                     app:drawableTint="@color/drawer_icon_color" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_menu_1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:background="@drawable/bg_greybackgroundcolor">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_wallet" />
+
+                    </RelativeLayout>
 
                 <TextView
                     app:drawableEndCompat="@drawable/ic_right_arrow"
@@ -218,15 +464,41 @@
                     android:focusable="true"
                     android:fontFamily="@font/open_sans"
                     android:minHeight="48dp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:paddingEnd="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_7sdp"
                     android:text="@string/wallet_history"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/ic_wallet"
                     app:drawableTint="@color/drawer_icon_color" />
+
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/bg_menu_1"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_margin="@dimen/_7sdp"
+                            android:padding="@dimen/_2sdp"
+                            android:background="@drawable/bg_greybackgroundcolor">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_transaction_history" />
+
+                        </RelativeLayout>
 
                 <TextView
                     app:drawableEndCompat="@drawable/ic_right_arrow"
@@ -241,15 +513,41 @@
                     android:focusable="true"
                     android:fontFamily="@font/open_sans"
                     android:minHeight="48dp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:paddingEnd="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_7sdp"
                     android:text="@string/transaction_history"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/ic_transaction_history"
                     app:drawableTint="@color/drawer_icon_color" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_menu_1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:background="@drawable/bg_greybackgroundcolor">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_black_pass" />
+
+                    </RelativeLayout>
 
                 <TextView
                     app:drawableEndCompat="@drawable/ic_right_arrow"
@@ -264,15 +562,41 @@
                     android:focusable="true"
                     android:fontFamily="@font/open_sans"
                     android:minHeight="48dp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:paddingEnd="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_7sdp"
                     android:text="@string/change_password"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/ic_pass"
                     app:drawableTint="@color/drawer_icon_color" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_menu_1"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_margin="@dimen/_7sdp"
+                            android:padding="@dimen/_2sdp"
+                            android:background="@drawable/bg_greybackgroundcolor">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_black_manage_address" />
+
+                        </RelativeLayout>
 
                 <TextView
                     app:drawableEndCompat="@drawable/ic_right_arrow"
@@ -287,15 +611,42 @@
                     android:focusable="true"
                     android:fontFamily="@font/open_sans"
                     android:minHeight="48dp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:paddingEnd="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_7sdp"
                     android:text="@string/manage_addresses"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/ic_manage_address"
                     app:drawableTint="@color/drawer_icon_color" />
+
+                </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/bg_menu_1"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_margin="@dimen/_7sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:background="@drawable/bg_greybackgroundcolor">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_black_add_person" />
+
+                            </RelativeLayout>
 
                 <TextView
                     app:drawableEndCompat="@drawable/ic_right_arrow"
@@ -310,114 +661,108 @@
                     android:focusable="true"
                     android:fontFamily="@font/open_sans"
                     android:minHeight="48dp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:paddingEnd="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_7sdp"
                     android:text="@string/refer_and_earn"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/ic_add_person"
                     app:drawableTint="@color/drawer_icon_color" />
+
+                        </LinearLayout>
 
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/card_shadow"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
             <View
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/light_grey" />
 
-            <TextView
-                android:id="@+id/tvMenuContactUs"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
-                android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
-                android:focusable="true"
-                android:fontFamily="@font/open_sans"
-                android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:paddingBottom="@dimen/_7sdp"
-                android:text="@string/contact"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_contact1"
-                app:drawableTint="@color/drawer_icon_color" />
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvMenuAboutUs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
-                android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
-                android:focusable="true"
-                android:fontFamily="@font/open_sans"
-                android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:paddingBottom="@dimen/_7sdp"
-                android:text="@string/about"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_about"
-                app:drawableTint="@color/drawer_icon_color" />
+                <RelativeLayout
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/bg_greybackgroundcolor">
 
-            <TextView
-                android:id="@+id/tvMenuRateUs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
-                android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
-                android:focusable="true"
-                android:fontFamily="@font/open_sans"
-                android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:paddingBottom="@dimen/_7sdp"
-                android:text="@string/rate"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_rate"
-                app:drawableTint="@color/drawer_icon_color" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_about" />
 
-            <TextView
-                android:id="@+id/tvMenuShareApp"
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvMenuAboutUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/text_view_ripple"
+                    android:clickable="true"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:text="@string/about"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_right_arrow"
+                    app:drawableTint="@color/drawer_icon_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
-                android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
-                android:focusable="true"
-                android:fontFamily="@font/open_sans"
-                android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:paddingBottom="@dimen/_7sdp"
-                android:text="@string/share_app"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_share"
-                app:drawableTint="@color/drawer_icon_color" />
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/bg_greybackgroundcolor">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_faq" />
+
+                </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvMenuFAQ"
@@ -431,16 +776,42 @@
                 android:focusable="true"
                 android:fontFamily="@font/open_sans"
                 android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_15sdp"
                 android:paddingBottom="@dimen/_7sdp"
                 android:text="@string/faq"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_faq"
                 app:drawableTint="@color/drawer_icon_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_menu_1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/bg_greybackgroundcolor">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_terms" />
+
+                </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvMenuTermsConditions"
@@ -454,16 +825,42 @@
                 android:focusable="true"
                 android:fontFamily="@font/open_sans"
                 android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_15sdp"
                 android:paddingBottom="@dimen/_7sdp"
                 android:text="@string/terms_conditions"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_terms"
                 app:drawableTint="@color/drawer_icon_color" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_menu_1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_7sdp"
+                android:padding="@dimen/_2sdp"
+                android:background="@drawable/bg_greybackgroundcolor">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_privacy" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvMenuPrivacyPolicy"
@@ -477,38 +874,68 @@
                 android:focusable="true"
                 android:fontFamily="@font/open_sans"
                 android:minHeight="48dp"
-                android:paddingStart="@dimen/_15sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_15sdp"
                 android:paddingBottom="@dimen/_7sdp"
                 android:text="@string/privacy_policy"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:drawableEndCompat="@drawable/ic_right_arrow"
-                app:drawableStartCompat="@drawable/ic_privacy"
                 app:drawableTint="@color/drawer_icon_color" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_menu_1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_7sdp"
+                android:padding="@dimen/_2sdp"
+                android:background="@drawable/bg_greybackgroundcolor">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_black_logout" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvMenuLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/text_view_ripple"
                 android:clickable="true"
-                android:drawablePadding="@dimen/_15sdp"
                 android:focusable="true"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:fontFamily="@font/open_sans"
-                android:paddingStart="@dimen/_15sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_15sdp"
                 android:paddingBottom="@dimen/_7sdp"
                 android:text="@string/logout"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableStartCompat="@drawable/ic_logout"
+                app:drawableEndCompat="@drawable/ic_right_arrow"
                 app:drawableTint="@color/drawer_icon_color" />
+
+        </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

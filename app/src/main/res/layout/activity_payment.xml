@@ -211,12 +211,41 @@
 
         </ScrollView>
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_above="@+id/confirmLyt"
+            android:background="@drawable/instraction_bg"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Safe and secure payments. Easy returns.\n100% Authentic products"
+                android:textColor="@color/black"
+                android:drawableStart="@drawable/ic_baseline_security_24"
+                android:drawableTint="@color/colorAccent"
+                android:drawablePadding="@dimen/_20sdp"
+
+                />
+
+
+
+        </RelativeLayout>
+
+
         <RelativeLayout
             android:id="@+id/confirmLyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:padding="@dimen/_5sdp">
+
+
 
             <LinearLayout
                 android:id="@+id/lytCalculations"
