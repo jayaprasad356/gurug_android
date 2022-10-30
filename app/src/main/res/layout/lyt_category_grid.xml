@@ -17,9 +17,9 @@
         android:clipToPadding="false"
         android:divider="@android:color/transparent"
         android:dividerHeight="0.0px"
-        android:elevation="15dp"
-        app:cardCornerRadius="7dp"
-        card_view:cardElevation="15dp"
+        android:elevation="50dp"
+        app:cardCornerRadius="50dp"
+        card_view:cardElevation="50dp"
         card_view:cardPreventCornerOverlap="false">
 
         <ImageView

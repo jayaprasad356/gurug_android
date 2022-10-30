@@ -55,6 +55,7 @@ public class OtpActivity extends AppCompatActivity {
         verifyButton = findViewById(R.id.btn_verify);
         pinViewOTP = findViewById(R.id.pinViewOTP);
         mobile = getIntent().getStringExtra(Constant.MOBILE);
+        from = getIntent().getStringExtra(Constant.FROM);
         activity = OtpActivity.this;
         session = new Session(activity);
         otpFor = "new_user";
@@ -87,7 +88,11 @@ public class OtpActivity extends AppCompatActivity {
                     if (otpFor.equals("new_user")) {
                         if (!object.getBoolean(Constant.ERROR)) {
                             dialog.dismiss();
-                            setSnackBar(getString(R.string.alert_register_num1) + getString(R.string.app_name) + getString(R.string.alert_register_num2), getString(R.string.btn_ok), from);
+                            Toast.makeText(activity, getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(activity,SignInActivity.class);
+                            startActivity(intent);
+                            finish();
+                            //setSnackBar(getString(R.string.alert_register_num1) + getString(R.string.app_name) + getString(R.string.alert_register_num2), getString(R.string.btn_ok), from);
                         } else {
                             sentRequest(phoneNumber);
                         }
@@ -97,7 +102,11 @@ public class OtpActivity extends AppCompatActivity {
                             sentRequest(phoneNumber);
                         } else {
                             dialog.dismiss();
-                            setSnackBar(getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), getString(R.string.btn_ok), from);
+                            Toast.makeText(activity, getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(activity,SignInActivity.class);
+                            startActivity(intent);
+                            finish();
+                            //setSnackBar(getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), getString(R.string.btn_ok), from);
                         }
                     }
                 } catch (JSONException ignored) {
@@ -150,6 +159,7 @@ public class OtpActivity extends AppCompatActivity {
 
     private void navigate() {
         Intent intent = new Intent(activity, SignUpActivity.class);
+        intent.putExtra(Constant.MOBILE,mobile);
         startActivity(intent);
     }
 

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/_30sdp"
     android:background="@color/colorWhite"
     tools:context=".activity.OtpActivity">
     <androidx.appcompat.widget.Toolbar
@@ -51,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/pinViewOTP"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/_7sdp">
 
             <ImageView
@@ -67,7 +67,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_margin="@dimen/_7sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:layout_toEndOf="@id/img"
                 android:text="@string/resend"
                 android:textColor="@color/gray"
@@ -90,11 +93,15 @@
             android:layout_below="@+id/resend_otp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <Button
                 android:id="@+id/btn_verify"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:background="@drawable/bg_gradient"
                 android:paddingTop="@dimen/_18sdp"
                 android:paddingBottom="@dimen/_18sdp"

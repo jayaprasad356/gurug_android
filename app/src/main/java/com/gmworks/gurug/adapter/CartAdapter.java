@@ -198,7 +198,7 @@ public class CartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 holder.tvProductName.setText(cart.getItems().get(0).getName());
 
-                holder.tvDelete.setOnClickListener(v -> removeItem(position));
+                holder.imgDelete.setOnClickListener(v -> removeItem(position));
 
                 holder.tvAction.setOnClickListener(v -> moveItem(position));
 
@@ -332,7 +332,7 @@ public class CartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final ImageView imgProduct;
         final ImageView btnMinusQuantity;
         final ImageView btnAddQuantity;
-        final TextView tvDelete;
+        final ImageView imgDelete;
         final TextView tvAction;
         final TextView tvProductName;
         final TextView tvMeasurement;
@@ -347,7 +347,7 @@ public class CartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public HolderItems(@NonNull View itemView) {
             super(itemView);
             imgProduct = itemView.findViewById(R.id.imgProduct);
-            tvDelete = itemView.findViewById(R.id.tvDelete);
+            imgDelete = itemView.findViewById(R.id.imgDelete);
             tvAction = itemView.findViewById(R.id.tvAction);
             btnMinusQuantity = itemView.findViewById(R.id.btnMinusQuantity);
             btnAddQuantity = itemView.findViewById(R.id.btnAddQuantity);
