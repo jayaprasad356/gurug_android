@@ -400,9 +400,9 @@
     <string name="delivery_charge_with_cod">Delivery charge (COD) : &#160;</string>
     <string name="delivery_charge_with_online">Available at&#160;</string>
     <string name="not_available_at">Not available at&#160;</string>
-    <string name="cancellable_till">Cancellable\ntill&#160;</string>
-    <string name="not_cancellable">Not\nCancellable</string>
-    <string name="not_returnable">Not\nReturnable</string>
+    <string name="cancellable_till">Cancellable till&#160;</string>
+    <string name="not_cancellable">Not Cancellable</string>
+    <string name="not_returnable">Not Returnable</string>
     <string name="returnable">Returnable</string>
     <string name="days"> days\n</string>
     <string name="cancelled">Cancelled</string>
