@@ -488,7 +488,7 @@ public class ProductDetailFragment extends Fragment {
             webDescription.setVerticalScrollBarEnabled(true);
 
             webDescription.loadDataWithBaseURL("", product.getDescription(), "text/html", "UTF-8", "");
-            webDescription.setBackgroundColor(ContextCompat.getColor(activity, R.color.white));
+            webDescription.setBackgroundColor(ContextCompat.getColor(activity, R.color.gray));
             txtProductName.setText(product.getName());
 
             spinner.setSelection(variantPosition);
