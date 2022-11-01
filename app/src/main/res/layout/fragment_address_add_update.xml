@@ -72,6 +72,7 @@
                     android:inputType="number"
                     android:padding="@dimen/_10sdp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white" />
 
             </LinearLayout>
@@ -98,6 +99,7 @@
                     android:inputType="number"
                     android:padding="@dimen/_10sdp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white" />
 
             </LinearLayout>
@@ -124,6 +126,7 @@
                     android:inputType="textPostalAddress"
                     android:padding="@dimen/_10sdp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white" />
 
             </LinearLayout>
@@ -149,6 +152,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:background="@drawable/etbg"
                     android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white" />
 
             </LinearLayout>
@@ -190,6 +194,7 @@
                             android:hint="@string/select_city"
                             android:importantForAutofill="no"
                             android:inputType="text"
+                            android:textColor="@color/white"
                             android:textColorHint="@color/white"
                             android:padding="@dimen/_10sdp"
                             android:background="@drawable/etbg"
@@ -222,9 +227,10 @@
                             android:focusable="false"
                             android:hint="@string/select_area"
                             android:importantForAutofill="no"
-                        android:textColorHint="@color/white"
-                        android:background="@drawable/etbg"
-                        android:padding="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:background="@drawable/etbg"
+                            android:padding="@dimen/_10sdp"
                             android:inputType="text"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
@@ -265,9 +271,10 @@
                             android:hint="@string/city"
                             android:importantForAutofill="no"
                             android:inputType="text"
-                        android:textColorHint="@color/white"
-                        android:background="@drawable/etbg"
-                        android:padding="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:background="@drawable/etbg"
+                            android:padding="@dimen/_10sdp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 </LinearLayout>
@@ -293,9 +300,10 @@
                             android:hint="@string/area"
                             android:importantForAutofill="no"
                             android:inputType="text"
-                        android:textColorHint="@color/white"
-                        android:background="@drawable/etbg"
-                        android:padding="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:background="@drawable/etbg"
+                            android:padding="@dimen/_10sdp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 </LinearLayout>
@@ -316,6 +324,7 @@
                     android:hint="@string/pincode"
                     android:importantForAutofill="no"
                     android:inputType="text"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:background="@drawable/etbg"
                     android:padding="@dimen/_10sdp"
@@ -357,6 +366,7 @@
                         android:inputType="text"
                         android:background="@drawable/etbg"
                         android:padding="@dimen/_10sdp"
+                        android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
                 </LinearLayout>
@@ -387,6 +397,7 @@
                         android:inputType="text"
                         android:background="@drawable/etbg"
                         android:padding="@dimen/_10sdp"
+                        android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
                 </LinearLayout>

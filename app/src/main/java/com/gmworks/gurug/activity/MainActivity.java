@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
 
         chipNavigationBar = findViewById(R.id.chipNavigationBar);
-        chipNavigationBar.setItemSelected(R.id.navWishList,
+        chipNavigationBar.setItemSelected(R.id.navMain,
                 true);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container,
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
                                 break;
 
                             case R.id.navProfile:
-                                fragment = new ProfileFragment();
+                                fragment = new DrawerFragment();
                                 break;
 
                         }
