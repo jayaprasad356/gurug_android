@@ -59,7 +59,8 @@ public class OtpActivity extends AppCompatActivity {
         activity = OtpActivity.this;
         session = new Session(activity);
         otpFor = "new_user";
-        generateOTP(mobile);
+        // generateOTP(mobile);
+        generateOtpWiaExotel("+91" + mobile, "01517cbacc844a0ea9f86c3b96b7a29b");
 
         verifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +71,31 @@ public class OtpActivity extends AppCompatActivity {
 
             }
         });
-        StartFirebaseLogin();
+        // StartFirebaseLogin();
 
+    }
+
+    private void generateOtpWiaExotel(String mobile, String appId) {
+        Map<String, String> params = new HashMap<>();
+        params.put("phone_number", mobile);
+        params.put("application_id", appId);
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                try {
+                    JSONObject object = new JSONObject(response);
+                    if (!object.getBoolean(Constant.ERROR))
+                        Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, activity, "https://exoverify.exotel.com/v2/accounts/globalguruguideenterprises1/verifications/sms", params, false);
     }
 
     public void generateOTP(String mobile) {
         dialog = ProgressDialog.show(activity, "", getString(R.string.please_wait), true);
-       // session.setData(Constant.COUNTRY_CODE, countryCode);
+        // session.setData(Constant.COUNTRY_CODE, countryCode);
         Map<String, String> params = new HashMap<>();
         params.put(Constant.TYPE, Constant.VERIFY_USER);
         params.put(Constant.MOBILE, mobile);
@@ -89,7 +108,7 @@ public class OtpActivity extends AppCompatActivity {
                         if (!object.getBoolean(Constant.ERROR)) {
                             dialog.dismiss();
                             Toast.makeText(activity, getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(activity,SignInActivity.class);
+                            Intent intent = new Intent(activity, SignInActivity.class);
                             startActivity(intent);
                             finish();
                             //setSnackBar(getString(R.string.alert_register_num1) + getString(R.string.app_name) + getString(R.string.alert_register_num2), getString(R.string.btn_ok), from);
@@ -103,7 +122,7 @@ public class OtpActivity extends AppCompatActivity {
                         } else {
                             dialog.dismiss();
                             Toast.makeText(activity, getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(activity,SignInActivity.class);
+                            Intent intent = new Intent(activity, SignInActivity.class);
                             startActivity(intent);
                             finish();
                             //setSnackBar(getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), getString(R.string.btn_ok), from);
@@ -159,7 +178,7 @@ public class OtpActivity extends AppCompatActivity {
 
     private void navigate() {
         Intent intent = new Intent(activity, SignUpActivity.class);
-        intent.putExtra(Constant.MOBILE,mobile);
+        intent.putExtra(Constant.MOBILE, mobile);
         startActivity(intent);
     }
 
