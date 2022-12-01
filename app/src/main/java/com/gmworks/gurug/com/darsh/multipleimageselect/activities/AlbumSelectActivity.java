@@ -78,7 +78,7 @@ public class AlbumSelectActivity extends HelperActivity {
         imageHome = findViewById(R.id.imageHome);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
-        toolbarTitle.setText(getString(R.string.payment));
+        toolbarTitle.setText("Select Profile");
 
         imageHome.setVisibility(View.GONE);
 

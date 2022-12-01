@@ -327,6 +327,17 @@ public class PaymentActivity extends AppCompatActivity implements PaytmPaymentTr
                 e.printStackTrace();
             }
         });
+        try {
+            RadioButton rb = findViewById(R.id.rbCOD);
+            carts = new ArrayList<>();
+            getCartData(rb.getTag().toString().equals("cod"));
+            paymentMethod = rb.getTag().toString();
+            defaultPaymentMethod = rb.getTag().toString();
+            hidePaymentOptions();
+            setPaymentDrawable(rb.getTag().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         chWallet.setTag("false");
         tvWltBalance.setText("Total Balance: " + session.getData(Constant.CURRENCY) + session.getData(Constant.WALLET_BALANCE));

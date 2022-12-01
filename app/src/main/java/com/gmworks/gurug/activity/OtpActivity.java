@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,7 +45,6 @@ public class OtpActivity extends AppCompatActivity {
     ProgressDialog dialog;
     String phoneNumber, otpFor = "", from, mobile;
     FirebaseAuth auth;
-    String countryCode = "IN";
 
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
 
@@ -76,11 +76,12 @@ public class OtpActivity extends AppCompatActivity {
 
     public void generateOTP(String mobile) {
         dialog = ProgressDialog.show(activity, "", getString(R.string.please_wait), true);
-       // session.setData(Constant.COUNTRY_CODE, countryCode);
+        // session.setData(Constant.COUNTRY_CODE, countryCode);
         Map<String, String> params = new HashMap<>();
         params.put(Constant.TYPE, Constant.VERIFY_USER);
         params.put(Constant.MOBILE, mobile);
         ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("RESPONSE_USER",response);
             if (result) {
                 try {
                     JSONObject object = new JSONObject(response);
@@ -88,7 +89,7 @@ public class OtpActivity extends AppCompatActivity {
                     if (otpFor.equals("new_user")) {
                         if (!object.getBoolean(Constant.ERROR)) {
                             dialog.dismiss();
-                            Toast.makeText(activity, getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, getString(R.string.alert_register_num1) + getString(R.string.app_name) + getString(R.string.alert_register_num2), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(activity,SignInActivity.class);
                             startActivity(intent);
                             finish();

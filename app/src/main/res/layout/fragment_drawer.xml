@@ -890,6 +890,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lytMenuLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
@@ -910,15 +911,18 @@
                     android:src="@drawable/ic_black_logout" />
 
             </RelativeLayout>
-
             <TextView
                 android:id="@+id/tvMenuLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
                 android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/text_view_ripple"
+                android:clickable="true"
+                android:drawablePadding="@dimen/_15sdp"
+                android:focusable="true"
                 android:fontFamily="@font/open_sans"
+                android:minHeight="48dp"
                 android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_15sdp"
@@ -931,6 +935,8 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:drawableEndCompat="@drawable/ic_right_arrow"
                 app:drawableTint="@color/drawer_icon_color" />
+
+
 
         </LinearLayout>
 

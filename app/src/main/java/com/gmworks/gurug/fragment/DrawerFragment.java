@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.gmworks.gurug.activity.MobileNumberActivity;
 import com.gmworks.gurug.activity.SignInActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -48,7 +49,7 @@ public class DrawerFragment extends Fragment {
     public ImageView imgEditProfile;
     Session session;
     Activity activity;
-    LinearLayout lytMenuGroup, lytProfile;
+    LinearLayout lytMenuGroup, lytProfile,lytMenuLogout;
     Fragment fragment;
     Bundle bundle;
     public static TextView tvWallet;
@@ -82,6 +83,7 @@ public class DrawerFragment extends Fragment {
         tvMenuTermsConditions = root.findViewById(R.id.tvMenuTermsConditions);
         tvMenuPrivacyPolicy = root.findViewById(R.id.tvMenuPrivacyPolicy);
         tvMenuLogout = root.findViewById(R.id.tvMenuLogout);
+        lytMenuLogout = root.findViewById(R.id.lytMenuLogout);
         lytMenuGroup = root.findViewById(R.id.lytMenuGroup);
         lytProfile = root.findViewById(R.id.lytProfile);
 
@@ -114,7 +116,7 @@ public class DrawerFragment extends Fragment {
 
         lytProfile.setOnClickListener(v -> {
             if (!session.getBoolean(Constant.IS_USER_LOGIN)) {
-                startActivity(new Intent(activity, SignInActivity.class).putExtra(Constant.FROM, "drawer"));
+                startActivity(new Intent(activity, MobileNumberActivity.class).putExtra(Constant.FROM, "drawer"));
             }
         });
 
@@ -129,6 +131,7 @@ public class DrawerFragment extends Fragment {
         } else {
             tvMenuLogout.setVisibility(View.GONE);
             lytMenuGroup.setVisibility(View.GONE);
+            lytMenuLogout.setVisibility(View.GONE);
         }
 
         tvMenuHome.setOnClickListener(v -> {

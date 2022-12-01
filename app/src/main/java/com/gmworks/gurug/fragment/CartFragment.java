@@ -36,6 +36,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.gmworks.gurug.activity.SplashActivity;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -282,7 +283,14 @@ public class CartFragment extends Fragment {
 
         });
 
-        btnShowNow.setOnClickListener(v -> MainActivity.fm.popBackStack());
+        btnShowNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(activity, MainActivity.class).putExtra(Constant.FROM, "").addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
+            }
+        });
+
 
         return root;
     }

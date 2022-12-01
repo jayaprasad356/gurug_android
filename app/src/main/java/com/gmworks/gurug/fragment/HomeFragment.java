@@ -135,11 +135,14 @@ public class HomeFragment extends Fragment {
             lytPinCode.setVisibility(View.VISIBLE);
 
             if (!session.getBoolean(Constant.GET_SELECTED_PINCODE)) {
-                MainActivity.pinCodeFragment = new PinCodeFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString(Constant.FROM, "home");
-                MainActivity.pinCodeFragment.setArguments(bundle);
-                MainActivity.pinCodeFragment.show(MainActivity.fm, null);
+                session.setBoolean(Constant.GET_SELECTED_PINCODE, true);
+                session.setData(Constant.GET_SELECTED_PINCODE_ID, "0");
+                session.setData(Constant.GET_SELECTED_PINCODE_NAME, activity.getString(R.string.all));
+//                MainActivity.pinCodeFragment = new PinCodeFragment();
+//                Bundle bundle = new Bundle();
+//                bundle.putString(Constant.FROM, "home");
+//                MainActivity.pinCodeFragment.setArguments(bundle);
+//                MainActivity.pinCodeFragment.show(MainActivity.fm, null);
             } else {
                 tvLocation.setText(session.getData(Constant.GET_SELECTED_PINCODE_NAME));
             }

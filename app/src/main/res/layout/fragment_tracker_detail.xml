@@ -538,6 +538,7 @@
             android:layout_weight="1"
             android:background="@drawable/bg_btn"
             android:text="@string/reorder"
+            android:visibility="gone"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"

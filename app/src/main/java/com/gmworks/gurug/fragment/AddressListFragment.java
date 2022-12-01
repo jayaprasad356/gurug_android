@@ -116,11 +116,28 @@ public class AddressListFragment extends Fragment {
                 if (Constant.selectedAddressId.equals("")) {
                     Toast.makeText(activity, activity.getString(R.string.please_select_address), Toast.LENGTH_SHORT).show();
                 } else if (session.getData(Constant.STATUS).equals("1")) {
-                    Intent intent = new Intent(activity, PaymentActivity.class);
-                    intent.putExtra(Constant.FROM, "process");
-                    intent.putExtra(Constant.PROMO_CODE, getArguments().getString(Constant.PROMO_CODE));
-                    intent.putExtra(Constant.PROMO_DISCOUNT, getArguments().getDouble(Constant.PROMO_DISCOUNT));
-                    startActivity(intent);
+                    assert getArguments() != null;
+                    Fragment fragment = new CheckoutFragment();
+                    final Bundle bundle = new Bundle();
+                    bundle.putString(Constant.FROM, "process");
+
+                    bundle.putDouble("total", Constant.FLOAT_TOTAL_AMOUNT);
+                    bundle.putStringArrayList("variantIdList", getArguments().getStringArrayList("variantIdList"));
+                    bundle.putStringArrayList("qtyList", getArguments().getStringArrayList("qtyList"));
+                    fragment.setArguments(bundle);
+                    MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                    try {
+                        if (CheckoutFragment.pCodeDiscount != 0) {
+                            CheckoutFragment.pCodeDiscount = 0;
+                        }
+                    } catch (Exception ignore) {
+
+                    }
+//                    Intent intent = new Intent(activity, PaymentActivity.class);
+//                    intent.putExtra(Constant.FROM, "process");
+//                    intent.putExtra(Constant.PROMO_CODE, getArguments().getString(Constant.PROMO_CODE));
+//                    intent.putExtra(Constant.PROMO_DISCOUNT, getArguments().getDouble(Constant.PROMO_DISCOUNT));
+//                    startActivity(intent);
                 } else {
                     Toast.makeText(activity, activity.getString(R.string.user_block_msg), Toast.LENGTH_SHORT).show();
                 }

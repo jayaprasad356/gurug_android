@@ -127,6 +127,13 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
                 .replace(R.id.container,
                         new HomeFragment()).commit();
 
+        imageHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fm.beginTransaction().add(R.id.container, new ProfileFragment()).addToBackStack(null).commit();
+            }
+        });
+
         bottomMenu();
 
         homeFragment = new HomeFragment();

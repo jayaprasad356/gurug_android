@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmworks.gurug.R;
@@ -32,6 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
     String mobile;
     Session session;
     DatabaseHelper databaseHelper;
+    TextView tvLogin;
 
 
     @Override
@@ -50,6 +52,13 @@ public class SignUpActivity extends AppCompatActivity {
         edtConfirmPassword = findViewById(R.id.edtConfirmPassword);
         edtRefer = findViewById(R.id.edtRefer);
         chPrivacy = findViewById(R.id.chPrivacy);
+        tvLogin = findViewById(R.id.tvLogin);
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,13 +69,15 @@ public class SignUpActivity extends AppCompatActivity {
                 if (ApiConfig.CheckValidation(name, false, false)) {
                     edtName.requestFocus();
                     edtName.setError(getString(R.string.enter_name));
-                } else if (ApiConfig.CheckValidation(email, false, false)) {
-                    edtEmail.requestFocus();
-                    edtEmail.setError(getString(R.string.enter_email));
-                } else if (ApiConfig.CheckValidation(email, true, false)) {
-                    edtEmail.requestFocus();
-                    edtEmail.setError(getString(R.string.enter_valid_email));
-                } else if (ApiConfig.CheckValidation(password, false, false)) {
+                }
+//                else if (ApiConfig.CheckValidation(email, false, false)) {
+//                    edtEmail.requestFocus();
+//                    edtEmail.setError(getString(R.string.enter_email));
+//                } else if (ApiConfig.CheckValidation(email, true, false)) {
+//                    edtEmail.requestFocus();
+//                    edtEmail.setError(getString(R.string.enter_valid_email));
+//                }
+                else if (ApiConfig.CheckValidation(password, false, false)) {
                     edtConfirmPassword.requestFocus();
                     edtPassword.setError(getString(R.string.enter_pass));
                 } else if (ApiConfig.CheckValidation(cpassword, false, false)) {
@@ -75,9 +86,11 @@ public class SignUpActivity extends AppCompatActivity {
                 } else if (!password.equals(cpassword)) {
                     edtConfirmPassword.requestFocus();
                     edtConfirmPassword.setError(getString(R.string.pass_not_match));
-                } else if (!chPrivacy.isChecked()) {
-                    Toast.makeText(activity, getString(R.string.alert_privacy_msg), Toast.LENGTH_LONG).show();
-                } else {
+                }
+//                else if (!chPrivacy.isChecked()) {
+//                    Toast.makeText(activity, getString(R.string.alert_privacy_msg), Toast.LENGTH_LONG).show();
+//                }
+                else {
                     UserSignUpSubmit(name, email, password);
                 }
             }

@@ -79,6 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"
                 android:background="@color/transparent">
 
                 <EditText
@@ -100,6 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
                 android:background="@color/gray" />
 
 
@@ -160,6 +162,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"
                 android:background="@color/transparent"
                 android:hint="@string/refer_">
 
@@ -180,12 +183,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
                 android:background="@color/gray" />
 
             <LinearLayout
                 android:id="@+id/lytPrivacy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="horizontal">
 
@@ -219,6 +224,18 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="@string/new_to_register"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/black" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

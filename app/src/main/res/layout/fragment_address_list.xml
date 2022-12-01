@@ -148,10 +148,10 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@drawable/bg_gradient"
+            android:drawableEnd="@drawable/ic_arrow_right"
             android:gravity="center"
             android:padding="@dimen/_10sdp"
             android:text="@string/continue_"
-            android:drawableEnd="@drawable/ic_arrow_right"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textStyle="bold" />

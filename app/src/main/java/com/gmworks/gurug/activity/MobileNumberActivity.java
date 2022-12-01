@@ -46,6 +46,7 @@ public class MobileNumberActivity extends AppCompatActivity {
     EditText mobilNumber;
     FirebaseAuth auth;
     String otp;
+    TextView tvLogin;
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
 
 
@@ -56,6 +57,7 @@ public class MobileNumberActivity extends AppCompatActivity {
         otpButton = findViewById(R.id.otp_button);
         activity = MobileNumberActivity.this;
         mobilNumber = findViewById(R.id.edtMobileVerify);
+        tvLogin = findViewById(R.id.tvLogin);
         session = new Session(activity);
         from = getIntent().getStringExtra(Constant.FROM);
 
@@ -65,6 +67,14 @@ public class MobileNumberActivity extends AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), OtpActivity.class);
                 intent.putExtra(Constant.MOBILE,mobilNumber.getText().toString());
                 startActivity(intent);
+            }
+        });
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SignInActivity.class);
+                startActivity(intent);
+
             }
         });
 

@@ -104,6 +104,7 @@
                 android:gravity="right"
                 android:text="@string/forgot_pass"
                 android:textColor="@color/black"
+                android:visibility="gone"
 
                 android:textStyle="bold" />
 
@@ -130,6 +131,7 @@
                 android:gravity="center"
                 android:paddingVertical="@dimen/_5sdp"
                 android:text="@string/new_to_register"
+                android:textSize="@dimen/_18sdp"
                 android:textColor="@color/black" />
 
 

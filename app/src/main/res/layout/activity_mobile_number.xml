@@ -114,6 +114,18 @@
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:text="@string/new_to_login"
+                android:textColor="@color/black" />
+
 
         </LinearLayout>
 

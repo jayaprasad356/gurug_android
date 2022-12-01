@@ -12,6 +12,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -343,6 +344,7 @@ public class TrackerDetailFragment extends Fragment {
         params.put(Constant.ID, id);
 
         ApiConfig.RequestToVolley((result, response) -> {
+
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);

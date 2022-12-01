@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gurug</string>
+    <string name="app_name">G GURU G</string>
     <!--  *************************************************************************************************************  -->
     <!--     For privacy policy and terms and condition whatever you set words in privacy_policy and terms_conditions that words must be contain in msg_privacy_terms.Other wise app will crash -->
     <string name="privacy_policy">Privacy Policy</string>
@@ -509,6 +509,7 @@
     <string name="log_in">Login</string>
     <string name="forgot_pass">Forgot Password?</string>
     <string name="new_to_register">New to Login?<b> Register</b></string>
+    <string name="new_to_login">Old User?<b> Login</b></string>
     <string name="sign_up">Sign Up</string>
 
 

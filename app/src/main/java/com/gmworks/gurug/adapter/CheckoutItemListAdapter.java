@@ -71,11 +71,12 @@ public class CheckoutItemListAdapter extends RecyclerView.Adapter<CheckoutItemLi
                 Constant.isCODAllow = false;
             }
 
-            if (!Boolean.parseBoolean(cart.getItems().get(0).getIs_item_deliverable()) && session.getData(Constant.SHIPPING_TYPE).equals("local")) {
-                CheckoutFragment.OrderPlacable = true;
-                holder.tvDeliverable.setVisibility(View.VISIBLE);
-                holder.tvDeliverable.setText(activity.getString(R.string.msg_item_not_deliverable));
-            } else if (cart.getItems().get(0).getServe_for().equalsIgnoreCase(Constant.SOLD_OUT_TEXT)) {
+//            if (!Boolean.parseBoolean(cart.getItems().get(0).getIs_item_deliverable())) {
+//                CheckoutFragment.OrderPlacable = true;
+//                holder.tvDeliverable.setVisibility(View.VISIBLE);
+//                holder.tvDeliverable.setText(activity.getString(R.string.msg_item_not_deliverable));
+//            } else
+                if (cart.getItems().get(0).getServe_for().equalsIgnoreCase(Constant.SOLD_OUT_TEXT)) {
                 CheckoutFragment.OrderPlacable = true;
                 holder.tvDeliverable.setVisibility(View.VISIBLE);
                 holder.tvDeliverable.setText(activity.getString(R.string.sold_out));

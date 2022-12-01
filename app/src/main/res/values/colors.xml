@@ -1,9 +1,9 @@
 <resources>
-    <color name="colorPrimary">#123872</color>
+    <color name="colorPrimary">#26384a</color>
     <color name="colorSecondary">#cfa365</color>
     <color name="colorPrimaryDark">#10161d</color>
-    <color name="colorAccent">#123872</color>
-    <color name="colorPrimaryLight">#244577</color>
+    <color name="colorAccent">#26384a</color>
+    <color name="colorPrimaryLight">#26384a</color>
     <color name="text_unselected">#A3AABF</color>
     <color name="violet">#e1e0fc</color>
     <color name="bg_color">#F8F8F8</color>
