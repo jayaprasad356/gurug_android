@@ -1,70 +1,41 @@
 {
   "project_info": {
-    "project_number": "1075732296640",
-    "project_id": "app-test-29db6",
-    "storage_bucket": "app-test-29db6.appspot.com"
+    "project_number": "1005761190482",
+    "project_id": "ggurug-app",
+    "storage_bucket": "ggurug-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1075732296640:android:4c6c2fe3f22debe0370e25",
+        "mobilesdk_app_id": "1:1005761190482:android:e81eb014b4e0f0aa90dd8b",
         "android_client_info": {
-          "package_name": "com.gmworks.gurug"
+          "package_name": "com.webapster.gurug"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1075732296640-iokdr1vv1224cgju12d1b49k82jummk3.apps.googleusercontent.com",
+          "client_id": "1005761190482-2jte38gbqol5fljq2astjf7agjj9qqjk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.gmworks.gurug",
+            "package_name": "com.webapster.gurug",
             "certificate_hash": "8881fdd25c090af0389a1c16daa2b5a47b80e897"
           }
         },
         {
-          "client_id": "1075732296640-34f881i3f5q6blif366avq9jok3okmnp.apps.googleusercontent.com",
+          "client_id": "1005761190482-s56qtnglr27gm90pu0srvpir5dbn8slu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDWJlxZtg1Bz5yaXkboG9u-CxbMKX3Y4A0"
+          "current_key": "AIzaSyCPMvaGKJuGJ9bTMzcLl3RNiZ3ATHPClZI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1075732296640-34f881i3f5q6blif366avq9jok3okmnp.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1075732296640:android:f4ecd9cca50f4446370e25",
-        "android_client_info": {
-          "package_name": "com.graymatterworks.gurug"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1075732296640-34f881i3f5q6blif366avq9jok3okmnp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDWJlxZtg1Bz5yaXkboG9u-CxbMKX3Y4A0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1075732296640-34f881i3f5q6blif366avq9jok3okmnp.apps.googleusercontent.com",
+              "client_id": "1005761190482-s56qtnglr27gm90pu0srvpir5dbn8slu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
