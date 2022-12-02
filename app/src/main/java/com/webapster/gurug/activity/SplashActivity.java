@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -24,6 +26,7 @@ import com.webapster.gurug.helper.Session;
 public class SplashActivity extends Activity {
     Session session;
     Activity activity;
+    TextView tvCompany;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,19 @@ public class SplashActivity extends Activity {
         window.setStatusBarColor(ContextCompat.getColor(activity, R.color.colorPrimary));
 
         setContentView(R.layout.activity_splash);
+        tvCompany = findViewById(R.id.tvCompany);
+
+        tvCompany.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://webapster.com/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+
 
         Uri data = this.getIntent().getData();
 

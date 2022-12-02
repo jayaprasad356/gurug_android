@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -270,6 +271,7 @@ public class ProductListFragment extends Fragment {
         }
 
         ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("PRODUCT_DETAIL",response);
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);

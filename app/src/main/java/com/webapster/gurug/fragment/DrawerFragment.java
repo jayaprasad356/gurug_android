@@ -51,7 +51,7 @@ public class DrawerFragment extends Fragment {
     LinearLayout lytMenuGroup, lytProfile,lytMenuLogout;
     Fragment fragment;
     Bundle bundle;
-    public static TextView tvWallet;
+    public static TextView tvWallet,tvCompany;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -85,6 +85,17 @@ public class DrawerFragment extends Fragment {
         lytMenuLogout = root.findViewById(R.id.lytMenuLogout);
         lytMenuGroup = root.findViewById(R.id.lytMenuGroup);
         lytProfile = root.findViewById(R.id.lytProfile);
+        tvCompany = root.findViewById(R.id.tvCompany);
+
+        tvCompany.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://webapster.com/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                activity.startActivity(i);
+            }
+        });
 
         if (session.getBoolean(Constant.IS_USER_LOGIN)) {
             tvName.setText(session.getData(Constant.NAME));

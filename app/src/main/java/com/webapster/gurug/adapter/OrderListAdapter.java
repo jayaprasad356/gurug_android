@@ -4,9 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.bumptech.glide.Glide;
 import com.webapster.gurug.R;
 import com.webapster.gurug.activity.MainActivity;
 import com.webapster.gurug.fragment.TrackerDetailFragment;
@@ -80,6 +83,15 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             holder.tvOrderID.setText(activity.getString(R.string.order_number) + order.getId());
             String[] date = order.getDate_added().split("\\s+");
             holder.tvOrderDate.setText(activity.getString(R.string.ordered_on) + date[0]);
+            if (order.getItems().size() != 0){
+                Glide.with(activity).load(order.getItems().get(0).getImage())
+                        .centerInside()
+                        .placeholder(R.drawable.placeholder)
+                        .error(R.drawable.placeholder)
+                        .into(holder.imgProduct);
+
+            }
+
             holder.tvOrderAmount.setText(activity.getString(R.string.for_amount_on) + new Session(activity).getData(Constant.CURRENCY) + ApiConfig.StringFormat(order.getFinal_total()));
 
             holder.lytMain.setOnClickListener(v -> {
@@ -137,6 +149,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         final TextView tvTotalItems;
         final TextView tvItems;
         final RelativeLayout lytMain;
+        final ImageView imgProduct;
 
         public HolderItems(View itemView) {
             super(itemView);
@@ -146,6 +159,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             tvTotalItems = itemView.findViewById(R.id.tvTotalItems);
             tvItems = itemView.findViewById(R.id.tvItems);
             lytMain = itemView.findViewById(R.id.lytMain);
+            imgProduct = itemView.findViewById(R.id.imgProduct);
 
         }
     }
