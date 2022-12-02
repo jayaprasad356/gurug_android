@@ -5,12 +5,8 @@ import java.util.HashMap;
 public class Constant {
     //MODIFICATION PART
 
-    //Admin panel url with it whould be nessesary to put "/"(slash) at end of the url (https://admin.panel.url/)
     public static final String MainBaseUrl = "https://gurug.greymatterworks.in/";
-    //public static final String MainBaseUrl = "http://192.168.43.38/gurug/";
-
-    //Admin panel url or ecart multivendor website url (if exist) url with it whould be nessesary to put "/"(slash) at end of the url (https://admin.panel.url/)
-    public static final String WebSiteUrl = "http://192.168.43.38/gurug/";
+     public static final String WebSiteUrl = "http://192.168.43.38/gurug/";
 
     //set your jwt secret key here...key must same in PHP and Android
     public static final String JWT_KEY = "Gurug@2022";
