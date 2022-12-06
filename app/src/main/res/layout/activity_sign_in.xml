@@ -92,6 +92,17 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/tvForgotPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/forgot_text"
+                android:textColor="@color/black" />
+
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"

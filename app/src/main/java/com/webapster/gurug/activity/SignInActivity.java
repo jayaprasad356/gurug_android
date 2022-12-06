@@ -32,6 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     String from;
     Button signinBtn;
     EditText etMobileNumber, etPassword;
+    TextView tvForgotPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +45,22 @@ public class SignInActivity extends AppCompatActivity {
         from = getIntent().getStringExtra(Constant.FROM);
         etMobileNumber = findViewById(R.id.edtLoginMobile);
         signinBtn=findViewById(R.id.btnLogin);
+        tvForgotPass=findViewById(R.id.tvForgotPass);
         etPassword = findViewById(R.id.imgLoginPassword);
         signinBtn.setOnClickListener(view -> UserLogin(etMobileNumber.getText().toString(), etPassword.getText().toString()));
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), MobileNumberActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity,ForgotPasswordOtpActivity.class);
                 startActivity(intent);
             }
         });
