@@ -13,10 +13,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.webapster.gurug.R;
 import com.webapster.gurug.helper.ApiConfig;
 import com.webapster.gurug.helper.Constant;
 import com.webapster.gurug.helper.Session;
+import com.webapster.gurug.model.OrderTracker;
 import com.webapster.gurug.ui.Pinview;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseException;
@@ -33,6 +35,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class OtpActivity extends AppCompatActivity {
@@ -44,6 +47,7 @@ public class OtpActivity extends AppCompatActivity {
     ProgressDialog dialog;
     String phoneNumber, otpFor = "", from, mobile;
     FirebaseAuth auth;
+    int otp;
 
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
 
@@ -58,19 +62,50 @@ public class OtpActivity extends AppCompatActivity {
         activity = OtpActivity.this;
         session = new Session(activity);
         otpFor = "new_user";
-        generateOTP(mobile);
+        //generateOTP(mobile);
+        sendOTP(mobile);
 
         verifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String otptext = Objects.requireNonNull(pinViewOTP.getValue()).trim();
 
-                OTP_Varification(otptext);
+                //  OTP_Varification(otptext);
+                otpVerify(otptext);
 
             }
         });
         StartFirebaseLogin();
 
+    }
+
+    private void otpVerify(String otptext) {
+        if (Integer.parseInt(otptext) == otp) {
+            Toast.makeText(activity, "success", Toast.LENGTH_SHORT).show();
+            navigate();
+        } else {
+            Toast.makeText(activity, "Invalid code entered...", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void sendOTP(String mobile) {
+        String url;
+        Random random = new Random();
+        otp = random.nextInt(900000 + 10000);
+        url = "https://api.authkey.io/request?authkey=3057d2af0685d53c&mobile=" + mobile + "&country_code=+91&sid=5750&otp=" + otp + "&company=Ggurug";
+        Map<String, String> params = new HashMap<>();
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                try {
+                    JSONObject jsonObject1 = new JSONObject(response);
+                    System.out.println(jsonObject1);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+
+                }
+            }
+        }, activity, url, params, false);
     }
 
     public void generateOTP(String mobile) {
@@ -80,7 +115,7 @@ public class OtpActivity extends AppCompatActivity {
         params.put(Constant.TYPE, Constant.VERIFY_USER);
         params.put(Constant.MOBILE, mobile);
         ApiConfig.RequestToVolley((result, response) -> {
-            Log.d("RESPONSE_USER",response);
+            Log.d("RESPONSE_USER", response);
             if (result) {
                 try {
                     JSONObject object = new JSONObject(response);
@@ -89,7 +124,7 @@ public class OtpActivity extends AppCompatActivity {
                         if (!object.getBoolean(Constant.ERROR)) {
                             dialog.dismiss();
                             Toast.makeText(activity, getString(R.string.alert_register_num1) + getString(R.string.app_name) + getString(R.string.alert_register_num2), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(activity,SignInActivity.class);
+                            Intent intent = new Intent(activity, SignInActivity.class);
                             startActivity(intent);
                             finish();
                             //setSnackBar(getString(R.string.alert_register_num1) + getString(R.string.app_name) + getString(R.string.alert_register_num2), getString(R.string.btn_ok), from);
@@ -103,7 +138,7 @@ public class OtpActivity extends AppCompatActivity {
                         } else {
                             dialog.dismiss();
                             Toast.makeText(activity, getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(activity,SignInActivity.class);
+                            Intent intent = new Intent(activity, SignInActivity.class);
                             startActivity(intent);
                             finish();
                             //setSnackBar(getString(R.string.alert_not_register_num1) + getString(R.string.app_name) + getString(R.string.alert_not_register_num2), getString(R.string.btn_ok), from);
@@ -159,7 +194,7 @@ public class OtpActivity extends AppCompatActivity {
 
     private void navigate() {
         Intent intent = new Intent(activity, SignUpActivity.class);
-        intent.putExtra(Constant.MOBILE,mobile);
+        intent.putExtra(Constant.MOBILE, mobile);
         startActivity(intent);
     }
 
