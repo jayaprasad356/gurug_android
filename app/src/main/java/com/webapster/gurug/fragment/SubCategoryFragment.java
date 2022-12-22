@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -135,6 +136,7 @@ public class SubCategoryFragment extends Fragment {
 
         categoryArrayList = new ArrayList<>();
         ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("SUB_CAT_FRAG",response);
             if (result) {
                 try {
                     JSONObject object = new JSONObject(response);

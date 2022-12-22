@@ -58,10 +58,7 @@
         <activity
             android:name=".activity.ForgotPasswordOtpActivity"
             android:exported="false" />
-        <activity
-            android:name=".activity.ForgotPasswordOtpActivity"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
+
         <activity
             android:name=".activity.SignUpActivity"
             android:exported="false">

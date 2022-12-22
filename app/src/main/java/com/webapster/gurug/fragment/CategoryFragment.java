@@ -2,6 +2,7 @@ package com.webapster.gurug.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -90,6 +91,7 @@ public class CategoryFragment extends Fragment {
         Map<String, String> params = new HashMap<>();
         ApiConfig.RequestToVolley((result, response) -> {
             //System.out.println("======cate " + response);
+            Log.d("CATEGORY_LIST",response);
             if (result) {
                 try {
                     JSONObject object = new JSONObject(response);
