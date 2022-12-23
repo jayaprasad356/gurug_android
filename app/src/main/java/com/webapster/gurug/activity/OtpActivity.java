@@ -90,8 +90,11 @@ public class OtpActivity extends AppCompatActivity {
 
     private void sendOTP(String mobile) {
         String url;
+
+
         Random random = new Random();
-        otp = random.nextInt(900000 + 10000);
+        otp = 100000 + random.nextInt(900000);
+
         url = "https://api.authkey.io/request?authkey=3057d2af0685d53c&mobile=" + mobile + "&country_code=+91&sid=5750&otp=" + otp + "&company=Ggurug";
         Map<String, String> params = new HashMap<>();
         ApiConfig.RequestToVolley((result, response) -> {
