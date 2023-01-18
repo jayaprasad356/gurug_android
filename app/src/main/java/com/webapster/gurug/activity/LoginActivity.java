@@ -595,6 +595,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void StartMainActivity(JSONObject jsonObject, String password) {
+        session.setBoolean(Constant.LOGEDIN,true);
         try {
             new Session(activity).createUserLoginSession(jsonObject.getString(Constant.PROFILE)
                     , session.getData(Constant.FCM_ID),

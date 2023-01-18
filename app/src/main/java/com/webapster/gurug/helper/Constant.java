@@ -192,6 +192,7 @@ public class Constant {
     public static final String EMAIL = "email";
     public static final String MOBILE = "mobile";
     public static final String LOGIN = "login";
+    public static final String LOGEDIN = "loged_in";
     public static final String ALTERNATE_MOBILE = "alternate_mobile";
     public static final String PASSWORD = "password";
     public static final String FCM_ID = "fcm_id";

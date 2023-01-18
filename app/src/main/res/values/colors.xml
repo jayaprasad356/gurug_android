@@ -1,5 +1,6 @@
 <resources>
     <color name="colorPrimary">#26384a</color>
+    <color name="add_to_cart_bg">#57718A</color>
     <color name="colorSecondary">#cfa365</color>
     <color name="colorPrimaryDark">#10161d</color>
     <color name="colorAccent">#26384a</color>

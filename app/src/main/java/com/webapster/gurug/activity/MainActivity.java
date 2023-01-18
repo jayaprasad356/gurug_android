@@ -62,11 +62,11 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
     @SuppressLint("StaticFieldLeak")
     public static Toolbar toolbar;
-   // public static BottomNavigationView bottomNavigationView;
+    // public static BottomNavigationView bottomNavigationView;
     public static Fragment active;
     public static FragmentManager fm = null;
-    public static Fragment homeFragment, categoryFragment,cartFragment, favoriteFragment, drawerFragment;
-    public static boolean homeClicked = false, categoryClicked = false, cartClicked = false,favoriteClicked = false, drawerClicked = false;
+    public static Fragment homeFragment, categoryFragment, cartFragment, favoriteFragment, drawerFragment;
+    public static boolean homeClicked = false, categoryClicked = false, cartClicked = false, favoriteClicked = false, drawerClicked = false;
     public Activity activity;
     public Session session;
     boolean doubleBackToExitPressedOnce = false;
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
         activity = MainActivity.this;
         session = new Session(activity);
-        ApiConfig.getShippingType(activity,session);
+        ApiConfig.getShippingType(activity, session);
 
 //        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         from = getIntent().getStringExtra(Constant.FROM);
@@ -114,9 +114,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
         fm = getSupportFragmentManager();
 
 
-
         fm = getSupportFragmentManager();
-
 
 
         chipNavigationBar = findViewById(R.id.chipNavigationBar);
@@ -143,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
 
         Bundle bundle = new Bundle();
-      //bottomNavigationView.setSelectedItemId(R.id.navMain);
+        //bottomNavigationView.setSelectedItemId(R.id.navMain);
         active = homeFragment;
         homeClicked = true;
         drawerClicked = false;
@@ -169,7 +167,6 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
                         Color.parseColor(getResources().getString(R.color.text_unselected)),
                         Color.parseColor(getResources().getString(R.color.colorSecondary))
                 });
-
 
 
         switch (from) {
@@ -261,7 +258,7 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
                     @Override
                     public void onItemSelected(int i) {
                         Fragment fragment = null;
-                        switch (i){
+                        switch (i) {
                             case R.id.navWishList:
                                 fragment = new FavoriteFragment();
                                 break;
@@ -274,8 +271,12 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
                                 break;
 
                             case R.id.navCart:
-                                fragment = new CartFragment();
-                                break;
+                                if (session.getBoolean(Constant.LOGEDIN)) {
+                                    fragment = new CartFragment();
+                                    break;
+                                } else
+                                    startActivity(new Intent(activity, LoginActivity.class));
+
 
                             case R.id.navProfile:
                                 fragment = new DrawerFragment();
