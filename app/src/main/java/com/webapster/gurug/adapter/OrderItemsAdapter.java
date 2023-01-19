@@ -247,7 +247,7 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Ca
 
                     Constant.isOrderCancelled = true;
                     Toast.makeText(activity, "Order "+status, Toast.LENGTH_SHORT).show();
-                    try {kimor
+                    try {
                         JSONObject object = new JSONObject(response);
                         if (!object.getBoolean(Constant.ERROR)) {
                             if (status.equals(Constant.CANCELLED)) {

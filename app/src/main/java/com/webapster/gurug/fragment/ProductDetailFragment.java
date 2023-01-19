@@ -414,16 +414,17 @@ public class ProductDetailFragment extends Fragment {
                     tvPinCode.setText(activity.getString(R.string.available_at) + session.getData(Constant.GET_SELECTED_PINCODE_NAME));
                 }
             }
+//todo seller click listener commented
 
-            tvSeller.setOnClickListener(v -> {
-                Fragment fragment = new SellerProductsFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString(Constant.ID, product.getSeller_id());
-                bundle.putString(Constant.TITLE, product.getSeller_name());
-                bundle.putString(Constant.FROM, from);
-                fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-            });
+//            tvSeller.setOnClickListener(v -> {
+//                Fragment fragment = new SellerProductsFragment();
+//                Bundle bundle = new Bundle();
+//                bundle.putString(Constant.ID, product.getSeller_id());
+//                bundle.putString(Constant.TITLE, product.getSeller_name());
+//                bundle.putString(Constant.FROM, from);
+//                fragment.setArguments(bundle);
+//                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//            });
 
             if (isLogin) {
                 if (product.isIs_favorite()) {
