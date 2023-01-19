@@ -3,6 +3,7 @@ package com.webapster.gurug.adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -220,13 +221,33 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Ca
 
             Map<String, String> params = new HashMap<>();
             params.put(Constant.UPDATE_ORDER_STATUS, Constant.GetVal);
-            params.put(Constant.ORDER_ID, orderItems.getId());
+            params.put(Constant.ORDER_ID, orderItems.getOrder_id());
             params.put(Constant.ORDER_ITEM_ID, orderItems.getId());
             params.put(Constant.STATUS, status);
             ApiConfig.RequestToVolley((result, response) -> {
+                if (status.equals(Constant.CANCELLED)) {
+                    holder.btnCancel.setVisibility(View.GONE);
+                    orderItems.setActive_status(status);
+                    orderTrackerArrayList.size();
+                    ApiConfig.getWalletBalance(activity, new Session(activity));
+                } else {
+                    holder.btnReturn.setVisibility(View.GONE);
+                }
+                Constant.isOrderCancelled = true;
                 // System.out.println("================= " + response);
                 if (result) {
-                    try {
+                    if (status.equals(Constant.CANCELLED)) {
+                        holder.btnCancel.setVisibility(View.GONE);
+                        orderItems.setActive_status(status);
+                        orderTrackerArrayList.size();
+                        ApiConfig.getWalletBalance(activity, new Session(activity));
+                    } else {
+                        holder.btnReturn.setVisibility(View.GONE);
+                    }
+
+                    Constant.isOrderCancelled = true;
+                    Toast.makeText(activity, "Order "+status, Toast.LENGTH_SHORT).show();
+                    try {kimor
                         JSONObject object = new JSONObject(response);
                         if (!object.getBoolean(Constant.ERROR)) {
                             if (status.equals(Constant.CANCELLED)) {

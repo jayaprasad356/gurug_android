@@ -15,7 +15,7 @@ public class Constant {
     public static final int GRID_COLUMN = 3;
 
     //Load items limit in listing ,Maximum load item once
-    public static final int LOAD_ITEM_LIMIT = 10;
+minor bug fixed    public static final int LOAD_ITEM_LIMIT = 50;
 
     //set true if you want to show sellers in home page, set false if you want to hide the seller in home page
     public static final boolean SHOW_SELLERS_IN_HOME_PAGE = true;

@@ -59,6 +59,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
                     android:textSize="@dimen/_18sdp"
                     android:textColor="@color/black" />
 
@@ -530,7 +531,7 @@
                         android:layout_marginBottom="@dimen/_7sdp"
                         android:background="@drawable/bg_menu_2"
                         android:padding="@dimen/_5sdp"
-                        android:visibility="visible">
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/tvTitleSeller"
@@ -748,6 +749,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/viewSimilar"
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/_10sdp">
 
                     <TextView
@@ -785,6 +787,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/titleLyt1"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
                     android:background="@color/bg_color"
                     android:nestedScrollingEnabled="false" />
             </RelativeLayout>

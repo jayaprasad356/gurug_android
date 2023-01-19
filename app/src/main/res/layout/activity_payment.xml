@@ -499,7 +499,7 @@
                         android:text="@string/cod_pay"
                         android:textAlignment="viewStart"
                         android:textSize="@dimen/_12sdp"
-                        android:visibility="gone" />
+                         />
 
                     <RadioButton
                         android:id="@+id/rbPayU"
@@ -529,7 +529,7 @@
                         android:text="@string/razor_payment"
                         android:textAlignment="viewStart"
                         android:textSize="@dimen/_12sdp"
-                        android:visibility="gone" />
+                         />
 
                     <RadioButton
                         android:id="@+id/rbPayStack"
