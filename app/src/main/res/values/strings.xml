@@ -513,6 +513,11 @@
     <string name="new_to_register">New to Login?<b> Register</b></string>
     <string name="new_to_login">Old User?<b> Login</b></string>
     <string name="sign_up">Sign Up</string>
+    <string name="enter_mobile_number">Please enter mobile number</string>
+    <string name="enter_valid_mobile_number">Please enter valid mobile number</string>
+    <string name="password_not_match">Password Mismatch</string>
+    <string name="enter_confirm_password">Enter confirm password</string>
+    <string name="enter_password">Enter password</string>
 
 
 </resources>

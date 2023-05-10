@@ -60,7 +60,17 @@ public class SignInActivity extends AppCompatActivity {
         tvForgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (etMobileNumber.getText().toString().isEmpty()) {
+                    etMobileNumber.setError(getString(R.string.enter_mobile_number));
+                    etMobileNumber.requestFocus();
+                    return;
+                }else if (etMobileNumber.getText().toString().length() < 10) {
+                    etMobileNumber.setError(getString(R.string.enter_valid_mobile_number));
+                    etMobileNumber.requestFocus();
+                    return;
+                }
                 Intent intent = new Intent(activity,ForgotPasswordOtpActivity.class);
+                intent.putExtra(Constant.MOBILE, etMobileNumber.getText().toString());
                 startActivity(intent);
             }
         });
